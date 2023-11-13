@@ -136,11 +136,18 @@ class AcrobatNode(IAccessible):
 
 	def _get_mathMl(self):
 		# There could be other stuff before the math element. Ug.
+		log.info(f"\n_get_mathMl: child count={self.pdDomNode.GetChildCount()}")
+		log.info(f"\nname={self.pdDomNode.GetName()}\nvalue={self.pdDomNode.GetValue()}")
+		mathMl = self.pdDomNode.GetValue()
+		if mathMl.startswith("<math"):
+			return mathMl.replace('xmlns:mml="http://www.w3.org/1998/Math/MathML"', '') \
+				         .rsplit('</math>', 1)[0] + '</math>'
 		for childNum in range(self.pdDomNode.GetChildCount()):
 			try:
 				child = self.pdDomNode.GetChild(childNum).QueryInterface(IPDDomElement)
 			except COMError:
 				continue
+			log.info(f"  get_mathMl: tag={child.GetTagName()}")
 			if child.GetTagName() == "math":
 				return "".join(self._getNodeMathMl(child))
 		raise LookupError
