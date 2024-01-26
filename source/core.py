@@ -69,6 +69,53 @@ _hasShutdownBeenTriggered = False
 _shuttingDownFlagLock = threading.Lock()
 
 
+def _showAddonsErrors() -> None:
+	addonFailureMessages: list[str] = []
+	failedUpdates = addonHandler._failedPendingInstalls.intersection(addonHandler._failedPendingRemovals)
+	failedInstalls = addonHandler._failedPendingInstalls - failedUpdates
+	failedRemovals = addonHandler._failedPendingRemovals - failedUpdates
+	if failedUpdates:
+		addonFailureMessages.append(
+			ngettext(
+				# Translators: Shown when one or more add-ons failed to update.
+				"The following add-on failed to update: {}.",
+				"The following add-ons failed to update: {}.",
+				len(failedUpdates)
+			).format(", ".join(failedUpdates))
+		)
+	if failedRemovals:
+		addonFailureMessages.append(
+			ngettext(
+				# Translators: Shown when one or more add-ons failed to be uninstalled.
+				"The following add-on failed to uninstall: {}.",
+				"The following add-ons failed to uninstall: {}.",
+				len(failedRemovals)
+			).format(", ".join(failedRemovals))
+		)
+	if failedInstalls:
+		addonFailureMessages.append(
+			ngettext(
+				# Translators: Shown when one or more add-ons failed to be installed.
+				"The following add-on failed to be installed: {}.",
+				"The following add-ons failed to be installed: {}.",
+				len(failedInstalls)
+			).format(", ".join(failedInstalls))
+		)
+
+	if addonFailureMessages:
+		import wx
+		import gui
+		gui.messageBox(
+			_(
+				# Translators: Shown when one or more actions on add-ons failed.
+				"Some operations on add-ons failed. See the log file for more details.\n{}"
+			).format("\n".join(addonFailureMessages)),
+			# Translators: Title of message shown when requested action on add-ons failed.
+			_("Error"),
+			wx.ICON_ERROR | wx.OK
+		)
+
+
 def doStartupDialogs():
 	import config
 	import gui
@@ -138,6 +185,7 @@ def doStartupDialogs():
 						pass
 			# Ask the user if usage stats can be collected.
 			gui.runScriptModalDialog(gui.startupDialogs.AskAllowUsageStatsDialog(None), onResult)
+	_showAddonsErrors()
 
 
 @dataclass
@@ -251,7 +299,7 @@ def resetConfiguration(factoryDefaults=False):
 	log.debug("setting language to %s"%lang)
 	languageHandler.setLanguage(lang)
 	# Addons
-	from _addonStore import dataManager
+	from addonStore import dataManager
 	dataManager.initialize()
 	addonHandler.initialize()
 	# Hardware background i/o
@@ -532,7 +580,7 @@ def main():
 	import socket
 	socket.setdefaulttimeout(10)
 	log.debug("Initializing add-ons system")
-	from _addonStore import dataManager
+	from addonStore import dataManager
 	dataManager.initialize()
 	addonHandler.initialize()
 	if globalVars.appArgs.disableAddons:
@@ -565,6 +613,11 @@ def main():
 		speech.speakMessage(_("Loading NVDA. Please wait..."))
 	import wx
 	import six
+
+	# Disables wx logging in secure mode due to a security issue: GHSA-h7pp-6jqw-g3pj
+	# This is due to the wx.LogSysError dialog allowing a file explorer dialog to be opened.
+	wx.Log.EnableLogging(not globalVars.appArgs.secure)
+
 	log.info("Using wx version %s with six version %s"%(wx.version(), six.__version__))
 	class App(wx.App):
 		def OnAssert(self,file,line,cond,msg):
@@ -766,7 +819,10 @@ def main():
 				sessionTracking.pumpAll()
 			except Exception:
 				log.exception("errors in this core pump cycle")
-			baseObject.AutoPropertyObject.invalidateCaches()
+			try:
+				baseObject.AutoPropertyObject.invalidateCaches()
+			except Exception:
+				log.exception("AutoPropertyObject.invalidateCaches failed")
 			watchdog.asleep()
 			self.isPumping = False
 			# #3803: If another pump was requested during this pump execution, we need

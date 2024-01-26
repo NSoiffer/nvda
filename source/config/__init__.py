@@ -559,7 +559,18 @@ class ConfigManager(object):
 				profile = self._loadConfig(fn) # a blank config returned if fn does not exist
 				self.baseConfigError = False
 			except:
-				log.error("Error loading base configuration", exc_info=True)
+				backupFileName = fn + '.corrupted.bak'
+				log.error(
+					"Error loading base configuration; the base configuration file will be reinitialized."
+					f" A copy of your previous configuration file will be saved at {backupFileName}",
+					exc_info=True,
+				)
+				try:
+					if os.path.exists(backupFileName):
+						os.unlink(backupFileName)
+					os.rename(fn, backupFileName)
+				except Exception:
+					log.error(f"Unable to save a copy of the corrupted configuration to {backupFileName}", exc_info=True)
 				self.baseConfigError = True
 				return self._initBaseConf(factoryDefaults=True)
 
@@ -624,7 +635,12 @@ class ConfigManager(object):
 		return self.rootSection.dict()
 
 	def listProfiles(self):
-		for name in os.listdir(WritePaths.profilesDir):
+		try:
+			profileFiles = os.listdir(WritePaths.profilesDir)
+		except FileNotFoundError:
+			log.debugWarning("Profiles directory does not exist.")
+			profileFiles = []
+		for name in profileFiles:
 			name, ext = os.path.splitext(name)
 			if ext == ".ini":
 				yield name
