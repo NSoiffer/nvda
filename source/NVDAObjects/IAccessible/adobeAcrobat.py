@@ -77,10 +77,14 @@ class AcrobatNode(IAccessible):
 
 		# Get the IPDDomNode.
 		try:
-			self.pdDomNode = serv.QueryService(SID_GetPDDomNode, IGetPDDomNode).get_PDDomNode(
-				self.IAccessibleChildID,
-			)
+			serv.QueryService(SID_GetPDDomNode, IGetPDDomNode)
 		except COMError:
+			log.info("FAILED: QueryService(SID_GetPDDomNode, IGetPDDomNode)")
+			self.pdDomNode = None
+		try:
+			self.pdDomNode = serv.QueryService(SID_GetPDDomNode, IGetPDDomNode).get_PDDomNode(self.IAccessibleChildID)
+		except COMError:
+			log.info("FAILED: get_PDDomNode")
 			self.pdDomNode = None
 
 		if self.pdDomNode:
@@ -137,6 +141,10 @@ class AcrobatNode(IAccessible):
 		yield "</%s>" % tag
 
 	def _get_mathMl(self):
+		log.info(f"_get_mathMl: self={self}")
+		if self.pdDomNode is None:
+			log.info("_get_mathMl: self.pdDomNode is None!")
+			raise LookupError
 		# There could be other stuff before the math element. Ug.
 		log.info(f"\n_get_mathMl: child count={self.pdDomNode.GetChildCount()}")
 		log.info(f"\nname={self.pdDomNode.GetName()}\nvalue={self.pdDomNode.GetValue()}")
