@@ -297,7 +297,7 @@ resFile = env.RES(
 )
 env32["projectResFile"] = resFile
 env64["projectResFile"] = resFile
-envArm64["projectResFile"] = resFile
+# envArm64["projectResFile"] = resFile
 
 # Fill sourceDir with anything provided for it by miscDeps
 env.recursiveCopy(sourceDir, Dir("miscdeps/source"))
@@ -320,11 +320,11 @@ env64.SConscript(
 	exports={"env": env64, "clientInstallDir": clientDir.Dir("x64"), "libInstallDir": sourceLibDir64},
 	variant_dir="build/x86_64",
 )
-envArm64.SConscript(
-	"nvdaHelper/archBuild_sconscript",
-	exports={"env": envArm64, "clientInstallDir": clientDir.Dir("arm64"), "libInstallDir": sourceLibDirArm64},
-	variant_dir="build/arm64",
-)
+# envArm64.SConscript(
+# 	"nvdaHelper/archBuild_sconscript",
+# 	exports={"env": envArm64, "clientInstallDir": clientDir.Dir("arm64"), "libInstallDir": sourceLibDirArm64},
+# 	variant_dir="build/arm64",
+# )
 
 # Allow all NVDA's gettext po files to be compiled in source/locale
 for po in env.Glob(sourceDir.path + "/locale/*/lc_messages/*.po"):
