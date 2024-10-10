@@ -79,12 +79,12 @@ class AcrobatNode(IAccessible):
 		try:
 			serv.QueryService(SID_GetPDDomNode, IGetPDDomNode)
 		except COMError:
-			log.info("FAILED: QueryService(SID_GetPDDomNode, IGetPDDomNode)")
+			log.debugWarning("FAILED: QueryService(SID_GetPDDomNode, IGetPDDomNode)")
 			self.pdDomNode = None
 		try:
 			self.pdDomNode = serv.QueryService(SID_GetPDDomNode, IGetPDDomNode).get_PDDomNode(self.IAccessibleChildID)
 		except COMError:
-			log.info("FAILED: get_PDDomNode")
+			log.debugWarning("FAILED: get_PDDomNode")
 			self.pdDomNode = None
 
 		if self.pdDomNode:
@@ -141,26 +141,28 @@ class AcrobatNode(IAccessible):
 		yield "</%s>" % tag
 
 	def _get_mathMl(self):
-		log.info(f"_get_mathMl: self={self}")
 		if self.pdDomNode is None:
-			log.info("_get_mathMl: self.pdDomNode is None!")
+			log.debugWarning("_get_mathMl: self.pdDomNode is None!")
 			raise LookupError
 		# There could be other stuff before the math element. Ug.
-		log.info(f"\n_get_mathMl: child count={self.pdDomNode.GetChildCount()}")
-		log.info(f"\nname={self.pdDomNode.GetName()}\nvalue={self.pdDomNode.GetValue()}")
 		mathMl = self.pdDomNode.GetValue()
+		log.debug(f'\n_get_mathMl: math recognized: {mathMl.startswith("<math")}, child count={self.pdDomNode.GetChildCount()}')
+		log.debug(f"\nname={self.pdDomNode.GetName()}\nvalue={self.pdDomNode.GetValue()}")
+		# this test and the replacement doesn't work if someone uses a namespace tag (which they shouldn't, but..)
 		if mathMl.startswith("<math"):
-			return mathMl.replace('xmlns:mml="http://www.w3.org/1998/Math/MathML"', '') \
-				         .rsplit('</math>', 1)[0] + '</math>'
+			return mathMl.replace('xmlns:mml="http://www.w3.org/1998/Math/MathML"', '') 
 		for childNum in range(self.pdDomNode.GetChildCount()):
 			try:
 				child = self.pdDomNode.GetChild(childNum).QueryInterface(IPDDomElement)
 			except COMError:
+				log.debugWarning(f"COMError trying to get childNum={childNum}")
 				continue
-			log.info(f"  get_mathMl: tag={child.GetTagName()}")
+			log.debug(f"  get_mathMl: tag={child.GetTagName()}")
 			if child.GetTagName() == "math":
 				return "".join(self._getNodeMathMl(child))
-		raise LookupError
+		# fall back to return the contents, which is hopefully to be alt text
+		log.debug(f"_get_mathMl: didn't find MathML -- returning value as mtext")
+		return f"<math><mtext>{self.pdDomNode.GetValue()}</mtext></math>"
 
 
 class RootNode(AcrobatNode):
