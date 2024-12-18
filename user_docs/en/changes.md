@@ -167,6 +167,7 @@ This is a patch release to fix a bug when saving speech symbol dictionaries.
 
 ### Bug fixes
 
+* Fixed bug that prevented reading math in Chromium Browsers (Chrome, Edge). (#17421, @NSoiffer)
 * Fixed bug where speech symbols dictionaries were not saved and the dialog would not be closed. (#17344)
 
 ## 2024.4
