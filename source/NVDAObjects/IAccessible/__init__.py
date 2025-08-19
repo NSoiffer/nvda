@@ -176,16 +176,18 @@ def normalizeIA2TextFormatField(formatField):
 	else:
 		formatField["italic"] = False
 	try:
-		invalid = formatField.pop("invalid")
+		invalid: str | None = formatField.pop("invalid")
 	except KeyError:
 		invalid = None
-	if invalid:
-		# aria-invalid can contain multiple values separated by a comma.
-		invalidList = [x.lower().strip() for x in invalid.split(",")]
-		if "spelling" in invalidList:
+	else:
+		invalid = invalid.lower().strip()
+	match invalid:
+		case "spelling":
 			formatField["invalid-spelling"] = True
-		if "grammar" in invalidList:
+		case "grammar":
 			formatField["invalid-grammar"] = True
+		case _:
+			pass
 	color = formatField.get("color")
 	if color:
 		try:
@@ -1078,15 +1080,15 @@ class IAccessible(Window):
 			return 0
 		return res if isinstance(res, int) else 0
 
-	states: typing.Set[controlTypes.State]
+	states: set[controlTypes.State]
 	"""Type info for auto property: _get_states
 	"""
 
 	# C901 '_get_states' is too complex. Look for opportunities to break this method down.
-	def _get_states(self) -> typing.Set[controlTypes.State]:  # noqa: C901
+	def _get_states(self) -> set[controlTypes.State]:  # noqa: C901
 		states = set()
 		if self.event_objectID in (winUser.OBJID_CLIENT, winUser.OBJID_WINDOW) and self.event_childID == 0:
-			states.update(super(IAccessible, self).states)
+			states.update(super().states)
 		try:
 			IAccessibleStates = self.IAccessibleStates
 		except COMError:
@@ -2431,6 +2433,12 @@ class OutlineItem(IAccessible):
 class List(IAccessible):
 	def _get_role(self):
 		return controlTypes.Role.LIST
+
+	def _get_states(self) -> set[controlTypes.State]:
+		states = super().states
+		if self.windowStyle & winUser.LBS_EXTENDEDSEL:
+			states.add(controlTypes.State.MULTISELECTABLE)
+		return states
 
 
 class SysLinkClient(IAccessible):
