@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nvda\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 02:41+0000\n"
-"PO-Revision-Date: 2025-08-18 03:13\n"
+"POT-Creation-Date: 2025-09-05 06:01+0000\n"
+"PO-Revision-Date: 2025-09-08 00:45\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -7608,7 +7608,7 @@ msgstr "Требуется более новая NVDA версии {nvdaVersion}
 #, python-brace-format
 msgctxt "addonStore"
 msgid "An updated version of this add-on is required. This add-on was last tested with NVDA {lastTestedNVDAVersion}. NVDA requires this add-on to be tested with NVDA {nvdaVersion} or higher. You can enable this add-on at your own risk. "
-msgstr "Требуется обновлённая версия этого дополнения. В последний раз это дополнение тестировалось с NVDA {lastTestedNVDAVersion}. Требуется протестировать это дополнение с  NVDA {nvdaVersion} или более поздней версии. Вы можете включить это дополнение на свой страх и риск. "
+msgstr "Требуется обновлённая версия этого дополнения. Последняя протестированная версия NVDA для этого дополнения - {lastTestedNVDAVersion}. Требуется протестировать это дополнение с  NVDA {nvdaVersion} или более поздней версии. Вы можете включить это дополнение на свой страх и риск. "
 
 #. Translators: A message indicating that some add-ons will be disabled
 #. unless reviewed before installation.
@@ -9816,178 +9816,184 @@ msgstr "Тайский (вторая ступень)"
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #: brailleTables\__tables.py:564
+msgid "Turkish 8 dot computer braille"
+msgstr "Турецкий восьмиточечный"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+#: brailleTables\__tables.py:567
 msgid "Turkish grade 1"
 msgstr "Турецкий (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:567
+#: brailleTables\__tables.py:570
 msgid "Turkish grade 2"
 msgstr "Турецкий (вторая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:570
+#: brailleTables\__tables.py:573
 msgid "Setswana grade 1"
 msgstr "Тсвана (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:573
+#: brailleTables\__tables.py:576
 msgid "Setswana grade 2"
 msgstr "Тсвана (вторая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:576
+#: brailleTables\__tables.py:579
 msgid "Ugaritic grade 1"
 msgstr "Угаритский (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:579
+#: brailleTables\__tables.py:582
 msgid "Ukrainian grade 1"
 msgstr "Украинский (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:582
+#: brailleTables\__tables.py:585
 msgid "Ukrainian literary braille (detailed)"
 msgstr "Украинский литературный брайль (с индикацией заглавных букв)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:585
+#: brailleTables\__tables.py:588
 msgid "Ukrainian computer braille"
 msgstr "Украинский компьютерный брайль"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:588
+#: brailleTables\__tables.py:591
 msgid "Urdu grade 1"
 msgstr "Урду (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:591
+#: brailleTables\__tables.py:594
 msgid "Urdu grade 2"
 msgstr "Урду (вторая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:594
+#: brailleTables\__tables.py:597
 msgid "Uzbek grade 1"
 msgstr "Узбекский (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:597
+#: brailleTables\__tables.py:600
 msgid "Unicode braille"
 msgstr "Брайлевский Unicode"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:600
+#: brailleTables\__tables.py:603
 msgid "Vietnamese grade 0"
 msgstr "Вьетнамский (нулевая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:603
+#: brailleTables\__tables.py:606
 msgid "Tshivenda grade 1"
 msgstr "Чивенда (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:606
+#: brailleTables\__tables.py:609
 msgid "Tshivenda grade 2"
 msgstr "Чивенда (вторая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:609
+#: brailleTables\__tables.py:612
 msgid "Vietnamese grade 1"
 msgstr "Вьетнамский (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:612
+#: brailleTables\__tables.py:615
 msgid "Vietnamese grade 2"
 msgstr "Вьетнамский (вторая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:615
+#: brailleTables\__tables.py:618
 msgid "Southern Vietnamese grade 1"
 msgstr "Южновьетнамский (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:618
+#: brailleTables\__tables.py:621
 msgid "Xhosa grade 1"
 msgstr "Ко́са (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:621
+#: brailleTables\__tables.py:624
 msgid "Xhosa grade 2"
 msgstr "Ко́са (вторая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:624
+#: brailleTables\__tables.py:627
 msgid "Yiddish grade 1"
 msgstr "Идиш (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #. This should be translated to '中文中国汉语通用盲文' in Mandarin.
-#: brailleTables\__tables.py:630
+#: brailleTables\__tables.py:633
 msgid "Chinese common braille (simplified Chinese characters)"
 msgstr "Китайский стандартный брайль (упрощённые китайские иероглифы)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #. This should be translated to '中文中国汉语现行盲文（无声调）' in Mandarin.
-#: brailleTables\__tables.py:637
+#: brailleTables\__tables.py:640
 msgid "Chinese (China, Mandarin) Current Braille System (no tones)"
 msgstr "Китайский (Китай, Мандарин) текущая система брайля (без тонов)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #. This should be translated to '中文中国汉语现行盲文' in Mandarin.
-#: brailleTables\__tables.py:644
+#: brailleTables\__tables.py:647
 msgid "Chinese (China, Mandarin) Current Braille System"
 msgstr "Китайский (Китай, Мандарин) текущая система брайля"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #. This should be translated to '中文中国汉语双拼盲文' in Mandarin.
-#: brailleTables\__tables.py:651
+#: brailleTables\__tables.py:654
 msgid "Chinese (China, Mandarin) Double-phonic Braille System"
 msgstr "Китайский (Китай, Мандарин) двухфоническая система брайля"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:654
+#: brailleTables\__tables.py:657
 msgid "Chinese (Hong Kong, Cantonese)"
 msgstr "Китайский (Гонконг, Кантонский)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:657
+#: brailleTables\__tables.py:660
 msgid "Chinese (Taiwan, Mandarin)"
 msgstr "Китайский (Тайвань, Мандарин)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:661
+#: brailleTables\__tables.py:664
 msgid "Zulu grade 1"
 msgstr "Зулусский (первая ступень)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:664
+#: brailleTables\__tables.py:667
 msgid "Zulu grade 2"
 msgstr "Зулусский (вторая ступень)"
 
@@ -12079,7 +12085,7 @@ msgstr "Несовместимые дополнения"
 #: gui\addonGui.py:350
 #, python-brace-format
 msgid "The following add-ons are incompatible with NVDA version {version}. These add-ons can not be enabled. Please contact the add-on author for further assistance."
-msgstr "Следующие дополнения несовместимы с NVDA версиии  {version}. Эти дополнения не могут быть включены. Пожалуйста, свяжитесь с авторами дополнений для получения дополнительной помощи."
+msgstr "Следующие дополнения несовместимы с NVDA версии {version}. Эти дополнения не могут быть включены. Пожалуйста, свяжитесь с авторами дополнений для получения дополнительной помощи."
 
 #. Translators: the label for the addons list in the incompatible addons dialog.
 #: gui\addonGui.py:358
@@ -15141,7 +15147,7 @@ msgstr "Удалить дополнение"
 msgctxt "addonStore"
 msgid "Warning: add-on is incompatible: {name} {version}. Check for an updated version of this add-on if possible. This add-on was last tested with NVDA {lastTestedNVDAVersion}. NVDA requires this add-on to be tested with NVDA {nvdaVersion} or higher. Installation may cause unstable behavior in NVDA.\n"
 "Proceed with installation anyway? "
-msgstr "Предупреждение: дополнение несовместимо: {name} {version}. По возможности проверьте наличие обновлённой версии этого дополнения. В последний раз это дополнение тестировалось с NVDA {lastTestedNVDAVersion}. Необходимо протестировать это дополнение с NVDA {nvdaVersion} или более поздней версии. Установка может привести к нестабильной работе NVDA.\n"
+msgstr "Предупреждение: дополнение {name} {version} несовместимо. По возможности проверьте наличие обновлённой версии этого дополнения. Последняя протестированная версия NVDA для этого дополнения - {lastTestedNVDAVersion}. Необходимо протестировать это дополнение с NVDA {nvdaVersion} или более поздней версии. Установка может привести к нестабильной работе NVDA.\n"
 "Всё равно продолжить установку? "
 
 #. Translators: The message displayed when enabling an add-on package that is incompatible
@@ -15151,7 +15157,7 @@ msgstr "Предупреждение: дополнение несовмести�
 msgctxt "addonStore"
 msgid "Warning: add-on is incompatible: {name} {version}. Check for an updated version of this add-on if possible. This add-on was last tested with NVDA {lastTestedNVDAVersion}. NVDA requires this add-on to be tested with NVDA {nvdaVersion} or higher. Enabling may cause unstable behavior in NVDA.\n"
 "Proceed with enabling anyway? "
-msgstr "Предупреждение: дополнение несовместимо: {name} {version}. По возможности проверьте наличие обновлённой версии этого дополнения. В последний раз это дополнение тестировалось с NVDA {lastTestedNVDAVersion}. Необходимо протестировать это дополнение с NVDA {nvdaVersion} или более поздней версии. Включение дополнения может привести к нестабильному поведению NVDA.\n"
+msgstr "Предупреждение: дополнение {name} {version} несовместимо. По возможности проверьте наличие обновлённой версии этого дополнения. Последняя протестированная версия NVDA для этого дополнения - {lastTestedNVDAVersion}. Необходимо протестировать это дополнение с NVDA {nvdaVersion} или более поздней версии. Включение дополнения может привести к нестабильному поведению NVDA.\n"
 "Всё равно включить дополнение? "
 
 #. Translators: The title of a dialog presented when an error occurs.

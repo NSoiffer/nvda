@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nvda\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-18 02:41+0000\n"
-"PO-Revision-Date: 2025-08-18 03:13\n"
+"POT-Creation-Date: 2025-09-05 06:01+0000\n"
+"PO-Revision-Date: 2025-09-08 00:44\n"
 "Last-Translator: \n"
 "Language-Team: Bosnian\n"
 "Language: bs_BA\n"
@@ -4827,7 +4827,7 @@ msgstr "Određuje hoće li se kontrolisati lokalni ili udaljeni računar"
 #: globalCommands.py:5059
 msgctxt "remote"
 msgid "Sends control+alt+delete to the controlled computer."
-msgstr ""
+msgstr "Šalje Control+Alt+Delete na računar koji se kontroliše."
 
 #. Translators: a message indicating that configuration profiles can't be activated using gestures,
 #. due to profile activation being suspended.
@@ -4855,7 +4855,7 @@ msgstr "Profil {profile} je aktiviran"
 #: globalCommands.py:5126
 #, python-brace-format
 msgid "Activates or deactivates the {profile} configuration profile"
-msgstr "Aktivira ili deaktivira {profile} konfiguracijski profila"
+msgstr "Aktivira ili deaktivira {profile} konfiguracijski profil"
 
 #. Translators: The name of a category of NVDA commands.
 #: inputCore.py:60
@@ -4969,12 +4969,12 @@ msgstr "povećavanje glasnoće"
 #. Translators: This is the name of the next track key found on multimedia keyboards to skip to next track in the mediaplayer.
 #: keyLabels.py:35
 msgid "next track"
-msgstr "sljedeća traka"
+msgstr "sljedeća pjesma"
 
 #. Translators: This is the name of the next track key found on multimedia keyboards to skip to next track in the mediaplayer.
 #: keyLabels.py:37
 msgid "previous track"
-msgstr "prethodna traka"
+msgstr "prethodna pjesma"
 
 #. Translators: This is the name of the stop key found on multimedia keyboards to stop the current playing track in the mediaplayer.
 #: keyLabels.py:39
@@ -5004,7 +5004,7 @@ msgstr "prilagođena aplikacija 1"
 #. Translators: This is the name of the launch custom application 2 key found on multimedia keyboards to launch a user-defined application.
 #: keyLabels.py:49
 msgid "custom application 2"
-msgstr "prilagođena aplikacija 1"
+msgstr "prilagođena aplikacija 2"
 
 #. Translators: This is the name of a key on the keyboard.
 #: keyLabels.py:51
@@ -7174,7 +7174,7 @@ msgstr "Ažuriranje NVDA dok je uspostavljena veza kao računar koji se kontroli
 #: updateCheck.py:1012
 msgid "The currently active connection may not be continued during or after the update. Even if the connection is continued, you will be unable to respond to User Account Control (UAC) prompts from the controlling computer. You should only proceed if you have physical access to the controlled computer.\n\n"
 "Are you sure you want to continue?"
-msgstr "Trenutna uspostavljena veza se možda neće nastaviti tokom ili nakon ažuriranja. Čak i ako je veza nastavljena, nećete moći odgovoriti na upite korisničke kontrole računa s udaljenog računara. Trebali biste nastaviti samo ako imate fizički pristup računaru koji se kontroliše.\n\n"
+msgstr "Trenutna uspostavljena veza se možda neće nastaviti tokom ili nakon ažuriranja. Čak i ako se veza nastavi, nećete moći odgovoriti na upite korisničke kontrole računa s udaljenog računara. Trebali biste nastaviti samo ako imate fizički pristup računaru koji se kontroliše.\n\n"
 "Jeste li sigurni da želite nastaviti?"
 
 #. Translators: The title of a dialog.
@@ -7261,13 +7261,13 @@ msgstr "Nije moguće uspostaviti vezu sa serverom trgovine dodataka."
 #: addonStore\dataManager.py:256
 msgctxt "addonStore"
 msgid "Unable to fetch latest add-on data for compatible add-ons."
-msgstr "Nije moguće dohvatiti najnovije podatke za kompatibilne dodatke."
+msgstr "Nije moguće dohvatiti najnovije podatke o kompatibilnim dodacima."
 
 #. Translators: A message shown when fetching add-on data from the store fails
 #: addonStore\dataManager.py:292
 msgctxt "addonStore"
 msgid "Unable to fetch latest add-on data for incompatible add-ons."
-msgstr "Nije moguće dohvatiti najnovije podatke za nekompatibilne dodatke."
+msgstr "Nije moguće dohvatiti najnovije podatke o nekompatibilnim dodacima."
 
 #. Translators: The message displayed when an error occurs when opening an add-on package for adding.
 #. The %s will be replaced with the path to the add-on that could not be opened.
@@ -7275,7 +7275,7 @@ msgstr "Nije moguće dohvatiti najnovije podatke za nekompatibilne dodatke."
 #, python-brace-format
 msgctxt "addonStore"
 msgid "Failed to open add-on package file at {filePath} - missing file or invalid file format"
-msgstr "Otvaranje datoteke paketa dodatka na {filePath} nije uspjelo. Datoteka nedostaje ili je njen oblik neispravan"
+msgstr "Otvaranje datoteke paketa dodatka u {filePath} nije uspjelo. Datoteka nedostaje ili je njen oblik neispravan"
 
 #. Translators: The message displayed when an add-on is not supported by this version of NVDA.
 #. The %s will be replaced with the path to the add-on that is not supported.
@@ -7639,13 +7639,13 @@ msgstr "Nije moguće pronaći prozor dokumentacije."
 #. Translators: Reported when no track is playing in Foobar 2000.
 #: appModules\foobar2000.py:148
 msgid "No track playing"
-msgstr "Ništa se ne reproducira"
+msgstr "Ništa se ne reprodukuje"
 
 #. Translators: The description of an NVDA command for reading the remaining time of the currently playing
 #. track in Foobar 2000.
 #: appModules\foobar2000.py:154
 msgid "Reports the remaining time of the currently playing track, if any"
-msgstr "Izvještava o preostalom vremenu trake koja se trenutno reproducira, ako postoji"
+msgstr "Izvještava o preostalom vremenu trake koja se trenutno reprodukuje, ako postoji"
 
 #. Translators: Reported remaining time in Foobar2000
 #: appModules\foobar2000.py:171
@@ -7662,7 +7662,7 @@ msgstr "Preostalo vrijeme nije dostupno"
 #. track in Foobar 2000.
 #: appModules\foobar2000.py:180
 msgid "Reports the elapsed time of the currently playing track, if any"
-msgstr "Izvještava o proteklom vremenu trake koja se trenutno reproducira, ako postoji"
+msgstr "Izvještava o proteklom vremenu trake koja se trenutno reprodukuje, ako postoji"
 
 #. Translators: Reported elapsed time in Foobar2000
 #: appModules\foobar2000.py:190
@@ -7679,7 +7679,7 @@ msgstr "Proteklo vrijeme nije dostupno"
 #. Foobar 2000.
 #: appModules\foobar2000.py:198
 msgid "Reports the length of the currently playing track, if any"
-msgstr "Izvještava o dužini trake koja se trenutno reproducira, ako postoji"
+msgstr "Izvještava o trajanju trake koja se trenutno reprodukuje, ako postoji"
 
 #. Translators: Reported remaining time in Foobar2000
 #: appModules\foobar2000.py:208
@@ -7869,7 +7869,7 @@ msgstr "Odaberi tekst do početka trenutnog rezultata"
 #: appModules\nvda.py:178
 #, python-brace-format
 msgid "Editing profile {profile}"
-msgstr "Uređivanje {profile} profila"
+msgstr "Uređivanje profila {profile}"
 
 #. Translators: the last action taken on an Outlook mail message
 #: appModules\outlook.py:57
@@ -9790,178 +9790,184 @@ msgstr "Tajlandski stepen 2"
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #: brailleTables\__tables.py:564
+msgid "Turkish 8 dot computer braille"
+msgstr "Turska osmotačkasta računarska brajica"
+
+#. Translators: The name of a braille table displayed in the
+#. braille settings dialog.
+#: brailleTables\__tables.py:567
 msgid "Turkish grade 1"
 msgstr "Turski stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:567
+#: brailleTables\__tables.py:570
 msgid "Turkish grade 2"
 msgstr "Turski stepen 2"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:570
+#: brailleTables\__tables.py:573
 msgid "Setswana grade 1"
 msgstr "Setswana stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:573
+#: brailleTables\__tables.py:576
 msgid "Setswana grade 2"
 msgstr "Setswana stepen 2"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:576
+#: brailleTables\__tables.py:579
 msgid "Ugaritic grade 1"
 msgstr "Ugarit stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:579
+#: brailleTables\__tables.py:582
 msgid "Ukrainian grade 1"
 msgstr "Ukrajinski stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:582
+#: brailleTables\__tables.py:585
 msgid "Ukrainian literary braille (detailed)"
 msgstr "Ukrajinska književna brajica (detaljna)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:585
+#: brailleTables\__tables.py:588
 msgid "Ukrainian computer braille"
 msgstr "Ukrajinska računarska brajica"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:588
+#: brailleTables\__tables.py:591
 msgid "Urdu grade 1"
 msgstr "Urdu stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:591
+#: brailleTables\__tables.py:594
 msgid "Urdu grade 2"
 msgstr "Urdu stepen 2"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:594
+#: brailleTables\__tables.py:597
 msgid "Uzbek grade 1"
 msgstr "Uzbekistanski stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:597
+#: brailleTables\__tables.py:600
 msgid "Unicode braille"
 msgstr "Unikodni brajev unos"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:600
+#: brailleTables\__tables.py:603
 msgid "Vietnamese grade 0"
 msgstr "Vijetnamski stepen 0"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:603
+#: brailleTables\__tables.py:606
 msgid "Tshivenda grade 1"
 msgstr "Tshivenda stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:606
+#: brailleTables\__tables.py:609
 msgid "Tshivenda grade 2"
 msgstr "Tshivenda stepen 2"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:609
+#: brailleTables\__tables.py:612
 msgid "Vietnamese grade 1"
 msgstr "Vijetnamski stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:612
+#: brailleTables\__tables.py:615
 msgid "Vietnamese grade 2"
 msgstr "Vijetnamski stepen 2"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:615
+#: brailleTables\__tables.py:618
 msgid "Southern Vietnamese grade 1"
 msgstr "Južnovijetnamski stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:618
+#: brailleTables\__tables.py:621
 msgid "Xhosa grade 1"
 msgstr "Xhosa stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:621
+#: brailleTables\__tables.py:624
 msgid "Xhosa grade 2"
 msgstr "Xhosa stepen 2"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:624
+#: brailleTables\__tables.py:627
 msgid "Yiddish grade 1"
 msgstr "Jidiš stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #. This should be translated to '中文中国汉语通用盲文' in Mandarin.
-#: brailleTables\__tables.py:630
+#: brailleTables\__tables.py:633
 msgid "Chinese common braille (simplified Chinese characters)"
 msgstr "Kineska uobičajena brajica (pojednostavljeni kineski znakovi)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #. This should be translated to '中文中国汉语现行盲文（无声调）' in Mandarin.
-#: brailleTables\__tables.py:637
+#: brailleTables\__tables.py:640
 msgid "Chinese (China, Mandarin) Current Braille System (no tones)"
 msgstr "Kineski (Kina, mandarinski) Trenutni brajev sistem (bez tonova)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #. This should be translated to '中文中国汉语现行盲文' in Mandarin.
-#: brailleTables\__tables.py:644
+#: brailleTables\__tables.py:647
 msgid "Chinese (China, Mandarin) Current Braille System"
 msgstr "Kineski (Kina, mandarinski) Trenutni brajev sistem"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
 #. This should be translated to '中文中国汉语双拼盲文' in Mandarin.
-#: brailleTables\__tables.py:651
+#: brailleTables\__tables.py:654
 msgid "Chinese (China, Mandarin) Double-phonic Braille System"
 msgstr "Kineski (Kina, mandarinski) Dvoglasni brajev sistem"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:654
+#: brailleTables\__tables.py:657
 msgid "Chinese (Hong Kong, Cantonese)"
 msgstr "Kineski (Hong Kong, kantonski)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:657
+#: brailleTables\__tables.py:660
 msgid "Chinese (Taiwan, Mandarin)"
 msgstr "Kineski (Tajvan, mandarinski)"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:661
+#: brailleTables\__tables.py:664
 msgid "Zulu grade 1"
 msgstr "Zulu stepen 1"
 
 #. Translators: The name of a braille table displayed in the
 #. braille settings dialog.
-#: brailleTables\__tables.py:664
+#: brailleTables\__tables.py:667
 msgid "Zulu grade 2"
 msgstr "Zulu stepen 2"
 
@@ -13842,7 +13848,7 @@ msgstr "Pitaj prije prekidanja veze"
 #: gui\settingsDialogs.py:3410
 msgctxt "remote"
 msgid "&Mute when controlling the local computer"
-msgstr ""
+msgstr "Isključi govor s udaljenog računara prilikom kontrolisanja lokalnog"
 
 #. Translators: A checkbox in Remote Access settings to set whether NVDA should automatically connect to a control server on startup.
 #: gui\settingsDialogs.py:3420
@@ -15440,25 +15446,25 @@ msgstr "Autori"
 #: gui\addonStoreGui\viewModels\addonList.py:96
 msgctxt "addonStore"
 msgid "Publication date"
-msgstr ""
+msgstr "Datum objavljivanja"
 
 #. Translators: The name of the column that contains the installation date of the add-on.
 #: gui\addonStoreGui\viewModels\addonList.py:101
 msgctxt "addonStore"
 msgid "Install date"
-msgstr ""
+msgstr "Datum instaliranja"
 
 #. Translators: The name of the column that contains the minimum version of NVDA required for this add-on.
 #: gui\addonStoreGui\viewModels\addonList.py:107
 msgctxt "addonStore"
 msgid "Minimum NVDA version"
-msgstr ""
+msgstr "Minimalna NVDA verzija"
 
 #. Translators: The name of the column that contains the last version of NVDA tested with this add-on.
 #: gui\addonStoreGui\viewModels\addonList.py:112
 msgctxt "addonStore"
 msgid "Last tested NVDA version"
-msgstr ""
+msgstr "Posljednja testirana NVDA verzija"
 
 #. Translators: An option of a combo box to sort columns in the add-on store, in ascending order.
 #. {column} will be replaced with the column display string.
@@ -18926,7 +18932,7 @@ msgstr "Uspostavi vezu"
 #: _remoteClient\localMachine.py:290
 msgctxt "remote"
 msgid "Unable to trigger control+alt+delete"
-msgstr "Nije moguće obraditi prečicu Control+Alt+Delete"
+msgstr "Nije moguće obraditi Control+Alt+Delete"
 
 #. Translators: Menu item in Remote Access submenu to mute speech and sounds from the remote computer.
 #: _remoteClient\menu.py:32
